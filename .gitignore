@@ -18,6 +18,13 @@ venv/
 dist/
 build/
 
+# Training artifacts
+runs/
+checkpoints/
+*.ckpt
+*.h5
+*.pt
+
 # macOS
 .DS_Store
 

@@ -1,0 +1,20 @@
+import tensorflow as tf
+from tensorflow import keras
+
+def get_mnist_datasets(batch_size: int = 64):
+    (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
+
+    x_train = x_train.astype("float32") / 255.0
+    x_test  = x_test.astype("float32") / 255.0
+
+    x_train = x_train[..., tf.newaxis]
+    x_test  = x_test[..., tf.newaxis]
+
+    train_ds = (
+        tf.data.Dataset.from_tensor_slices((x_train, y_train))
+        .shuffle(10000)
+        .batch(batch_size)
+    )
+    test_ds = tf.data.Dataset.from_tensor_slices((x_test, y_test)).batch(batch_size)
+
+    return train_ds, test_ds
