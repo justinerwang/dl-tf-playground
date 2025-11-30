@@ -1,0 +1,25 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environments
+.env
+.venv
+env/
+venv/
+.mamba
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
